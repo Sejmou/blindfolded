@@ -12,7 +12,7 @@ Run `pnpm run db:push` once to create the database tables (requires `DATABASE_UR
 
 ---
 
-*Scaffolding: Svelte project powered by [`sv`](https://github.com/sveltejs/cli).*
+_Scaffolding: Svelte project powered by [`sv`](https://github.com/sveltejs/cli)._
 
 ## Creating a project
 

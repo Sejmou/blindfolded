@@ -29,6 +29,7 @@
 		try {
 			const res = await fetch('/api/vote', {
 				method: 'POST',
+				credentials: 'include',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({
 					token,

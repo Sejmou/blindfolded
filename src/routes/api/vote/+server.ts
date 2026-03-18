@@ -64,15 +64,18 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
 		votedSessions.push(session.id);
 	}
 
+	const isSecure = process.env.NODE_ENV === 'production';
 	cookies.set(HAS_VOTED_COOKIE, '1', {
 		path: '/',
 		httpOnly: true,
+		secure: isSecure,
 		sameSite: 'lax',
 		maxAge: HAS_VOTED_MAX_AGE
 	});
 	cookies.set(VOTED_SESSIONS_COOKIE, votedSessions.join(','), {
 		path: '/',
 		httpOnly: true,
+		secure: isSecure,
 		sameSite: 'lax',
 		maxAge: HAS_VOTED_MAX_AGE
 	});
