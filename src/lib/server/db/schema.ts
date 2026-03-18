@@ -30,6 +30,8 @@ export const votes = sqliteTable('votes', {
 		.references(() => sessions.id, { onDelete: 'cascade' }),
 	/** Which option they chose (0-based slot index, not file index) */
 	chosenSlotIndex: integer('chosen_slot_index').notNull(),
+	/** Filename they chose (resolved at vote time so results stay correct if files change) */
+	chosenFileName: text('chosen_file_name'),
 	voterName: text('voter_name').notNull(),
 	createdAt: integer('created_at', { mode: 'timestamp' })
 		.notNull()

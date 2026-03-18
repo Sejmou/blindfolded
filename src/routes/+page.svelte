@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { base } from '$app/paths';
+
+	let { data } = $props();
 	let loading = $state(false);
 	let error = $state('');
 
@@ -36,6 +39,14 @@
 		</button>
 		{#if error}
 			<p class="text-red-400 text-sm">{error}</p>
+		{/if}
+		{#if data.hasVoted}
+			<a
+				href={`${base}/evaluate`}
+				class="block mt-6 text-sm text-stone-500 hover:text-amber-400 transition-colors"
+			>
+				View voting results →
+			</a>
 		{/if}
 	</div>
 </main>
