@@ -1,6 +1,18 @@
-# sv
+# Blindfolded
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A simple web app for blind A/B (or more) voting on audio takes. Each visitor gets a unique link; the order of takes is randomized so they never know which file is which.
+
+## How it works
+
+1. **Home** — Click “Get my voting link” to create a unique session and go to your voting page.
+2. **Vote** — Listen to each option (A, B, …). The order is randomized per link. Choose your preferred take and enter your name.
+3. **Audio** — Put 2 or more audio files in the `audio_takes` folder (`.mp3`, `.wav`, `.m4a`, `.ogg`, `.webm`). Optionally set `AUDIO_TAKES_DIR` to another path.
+
+Run `pnpm run db:push` once to create the database tables (requires `DATABASE_URL` in `.env`, e.g. `DATABASE_URL=file:./local.db`).
+
+---
+
+*Scaffolding: Svelte project powered by [`sv`](https://github.com/sveltejs/cli).*
 
 ## Creating a project
 
